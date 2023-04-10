@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("categories.html");
+      });
+    </script>
+    <title>Retirement Planner</title>
+  </head>
+  <body>
+    <label for="contribution-limit">Maximum Contribution Limit (in INR): </label>
+      <input type="number" id="contribution-limit" name="contribution-limit" required><br><br>
+      
+      <label for="catch-up-checkbox">Are you 50 or older?</label>
+      <input type="checkbox" id="catch-up-checkbox" name="catch-up-checkbox"><br><br>
+
+      <label for="catch-up">Catch-up (in INR): </label>
+      <input type="number" id="catch-up" name="catch-up" disabled><br><br>
+
+      <label for="contribution-to-date">Contribution to Date (in INR): </label>
+      <input type="number" id="contribution-to-date" name="contribution-to-date" required><br><br>
+
+      <label for="remaining-pay-periods">Remaining Pay Periods: </label>
+      <input type="number" id="remaining-pay-periods" name="remaining-pay-periods" required><br><br>
+
+      <input type="button" value="Calculate" onclick="calculate()"><br><br>
+
+      <label for="max-contribution">Maximum Contribution per Remaining Pay Period (in INR): </label>
+      <output type="number" id="max-contribution"></output><br><br>
+
+      <label for="amount-remaining">Amount Remaining to Max Contribution (in INR): </label>
+      <output type="number" id="amount-remaining"></output><br><br>
+
+      <input type="reset" value="Reset" onclick="resetForm()">
+      <script src="js/stmCalculator.js"></script>
+  </body>
+</html>

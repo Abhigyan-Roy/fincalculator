@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("categories.html");
+      });
+    </script>
+    <title>Retirement Planner</title>
+  </head>
+  <body>
+    <div class="categories" id="includeHtml"></div>
+    <div class="fncalc">
+      <label for="Currently Saved">Currently Saved</label>
+      <input id="Currently Saved" type="number" />
+       
+      <label for="Salary">Salary</label>
+      <select id="salaryMode">
+        <option value="Monthly" selected="selected">Monthly</option>
+        <option value="Annually">Annually</option>
+      </select>
+      <input id="Salary" type="number" />
+
+      <label for="Annual Salary Raise">Annual Salary Raise (%)</label>
+      <input id="Annual Salary Raise" type="number" />
+
+      <label for="Compounding">Compounding</label>
+      <input id="Compounding" type="number" />
+
+      <label for="Contribution">Contribution (%)</label>
+      <input id="Contribution" type="number" />
+
+      <label for="Employer Match">Employer Match (%)</label>
+      <input id="Employer Match" type="number" />
+
+      <label for="Secondary Employer Match">Secondary Employer Match (%)</label>
+      <input id="Secondary Employer Match" type="number" />
+
+      <label for="Secondary Employer Match Up To">Secondary Employer Match Up To (%)</label>
+      <input id="Secondary Employer Match Up To" type="number" />
+
+      <label for="Annual Return Rate">Annual Return Rate (%)</label>
+      <input id="Annual Return Rate" type="number" />
+
+      <label for="How Many Years until Retire">How Many Years until Retire</label>
+      <input id="How Many Years until Retire" type="number" />
+      <button id="future-value-button" type="button">Calculate</button>
+    </div>
+
+    <script src="js/cCalculator.js"></script>
+  </body>
+</html>

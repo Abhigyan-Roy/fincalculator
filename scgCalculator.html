@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("categories.html");
+      });
+    </script>
+    <title>Retirement Planner</title>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Stock Constant Growth Calculator</h1>
+	<p>Enter the following values:</p>
+	<label for="currentDividend">Current Dividend:</label>
+	<input type="text" id="currentDividend"><br><br>
+	<label for="growthRate">Growth Rate (%):</label>
+	<input type="text" id="growthRate"><br><br>
+	<label for="requiredReturn">Required Return (%):</label>
+	<input type="text" id="requiredReturn"><br><br>
+	<button onclick="calculate()">Calculate</button><br><br>
+	<p id="result"></p>
+      <script src="js/scgCalculator.js"></script>
+  </body>
+</html>

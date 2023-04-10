@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("categories.html");
+      });
+    </script>
+    <title>Required Minimum Distribution (RMD)</title>
+  </head>
+  <body>
+    <div>
+        <label for="age">Age at Year-End</label>
+        <input id="age" type="number" min="0" max="150" />
+      </div>
+  
+      <div>
+        <label for="prevBalance">Previous Year-End Account Balance</label>
+        <input id="prevBalance" type="number" min="0" step="0.01" />
+      </div>
+  
+      <div>
+        <label for="spouseBeneficiary">Spouse Sole Beneficiary who is more than 10 years younger</label>
+        <input id="spouseBeneficiary" type="checkbox" />
+      </div>
+  
+      <div>
+        <button id="calculateButton" type="button">Calculate RMD</button>
+        <button id="resetButton" type="button">Reset</button>
+      </div>
+  
+      <div>
+        <label for="rmdAmount">RMD Amount:</label>
+        <span id="rmdAmount"></span>
+      </div>
+
+    <script src="js/rmd.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#includeHtml").load("categories.html");
+      });
+    </script>
+    <title>Retirement Planner</title>
+  </head>
+  <body>
+    <h1>WACC Calculator</h1>
+  <form>
+    <label for="cost_of_equity">Cost of Equity:</label>
+    <input type="number" id="cost_of_equity" step="0.01" required><br><br>
+
+    <label for="total_equity">Total Equity:</label>
+    <input type="number" id="total_equity" required><br><br>
+
+    <label for="cost_of_debt">Cost of Debt:</label>
+    <input type="number" id="cost_of_debt" step="0.01" required><br><br>
+
+    <label for="total_debt">Total Debt:</label>
+    <input type="number" id="total_debt" required><br><br>
+
+    <label for="corporate_tax_rate">Corporate Tax Rate:</label>
+    <input type="number" id="corporate_tax_rate" step="0.01" required><br><br>
+
+    <input type="button" value="Calculate" onclick="calculateWACC()"><br><br>
+    <input type="button" value="Reset" onclick="resetForm()"><br><br>
+    <div id="result"></div>
+  </form>
+      <script src="js/wacocCalculator.js"></script>
+  </body>
+</html>
