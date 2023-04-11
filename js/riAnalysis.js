@@ -33,10 +33,4 @@ function calculateRetirementIncome() {
   retirementIncomeResult.innerHTML = `Monthly Retirement Income: &#8377;${monthlyIncome.toFixed(2)}`;
 }
 
-function resetCalculator() {
-  savedAtRetirement.value = "";
-  retirementYears.value = "";
-  annualReturnRate.value = "";
-  retirementIncomeResult.innerHTML = "";
-}
 

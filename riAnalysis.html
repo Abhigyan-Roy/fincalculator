@@ -10,10 +10,11 @@
         $("#includeHtml").load("categories.html");
       });
     </script>
-    <title>Retirement Planner</title>
+    <title>Retirement Income Analysis Calculator</title>
   </head>
   <body>
     <div class="fncalc">
+      <form>
       <label for="Saved at Retirement">Saved at Retirement</label>
       <input id="Saved at Retirement" type="number" />
 
@@ -26,7 +27,8 @@
       <button id="retirement-income-button" type="button">Calculate</button>
 
       <p id="retirement-income-result"></p>
-      <button id="reset-button" type="button">Reset</button>
+      <button type="reset">Reset</button>
+    </form>
     </div>
 
     <script src="js/riAnalysis.js"></script>

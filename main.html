@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation"><h1>NAV BAR</h1></div>
+        <div class="side"><h1>SIDE BAR</h1></div>
+        <div class="main">
+            <div class="show">
+                <div class="name"><h1>Retirement Income Analysis Calculator</h1></div>
+                <div class="left">
+                    <div class="inp">                                                               <!--it is the input div,put all the input fields(inside form) here-->
+                        <form>
+                            <label for="Saved at Retirement">Saved at Retirement</label>
+                            <input id="Saved at Retirement" type="number" />
+                            <label for="Retirement Years">Retirement Years</label>
+                            <input id="Retirement Years" type="number" />
+                            <label for="Annual Return Rate">Annual Return Rate (%)</label>
+                            <input id="Annual Return Rate" type="number" />
+                            <button id="retirement-income-button" class="btn" type="button">Calculate</button>
+                            <button type="reset" class="btn">Reset</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="out">                                                              <!--put all the result related(output) fields here in this div-->
+                        <p id="retirement-income-result">Result:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/riAnalysis.js"></script>
+</body>
+</html>
