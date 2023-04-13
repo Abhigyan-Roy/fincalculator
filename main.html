@@ -1,41 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Calculator</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body>
     <div class="container">
-        <div class="navigation"><h1>NAV BAR</h1></div>
-        <div class="side"><h1>SIDE BAR</h1></div>
-        <div class="main">
-            <div class="show">
-                <div class="name"><h1>Retirement Income Analysis Calculator</h1></div>
-                <div class="left">
-                    <div class="inp">                                                               <!--it is the input div,put all the input fields(inside form) here-->
-                        <form>
-                            <label for="Saved at Retirement">Saved at Retirement</label>
-                            <input id="Saved at Retirement" type="number" />
-                            <label for="Retirement Years">Retirement Years</label>
-                            <input id="Retirement Years" type="number" />
-                            <label for="Annual Return Rate">Annual Return Rate (%)</label>
-                            <input id="Annual Return Rate" type="number" />
-                            <button id="retirement-income-button" class="btn" type="button">Calculate</button>
-                            <button type="reset" class="btn">Reset</button>
-                        </form>
-                    </div>
+        <div class="navigation">
+            <h1>NAV BAR</h1>
+        </div>
+        <div class="wrapper">
+            <div class="side">
+                <div class="btnn">
+                    <span class="fas fa-bars"></span>
                 </div>
-                <div class="right">
-                    <div class="out">                                                              <!--put all the result related(output) fields here in this div-->
-                        <p id="retirement-income-result">Result:</p>
+                <nav class="sidebar">
+                    <ul>
+                        <li class="active"><a href="#">Dashboard</a></li>
+                        <li>
+                            <a href="#" class="feat-btn">Features
+                                <span class="fas fa-caret-down first"></span>
+                            </a>
+                            <ul class="feat-show">
+                                <li><a href="#">Pages</a></li>
+                                <li><a href="#">Elements</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="serv-btn">Loan/Mortgage
+                                <span class="fas fa-caret-down second"></span>
+                            </a>
+                            <ul class="serv-show">
+                                <li><a href="/loanCalculator.html">Loan Calculator</a></li>
+                                <li><a href="/lcCalculator.html">Loan Comparison Calculator</a></li>
+                                <li><a href="/lrCalculator.html">Loan Refinance Calculator</a></li>
+                                <li><a href="/aprCalculator.html">APR Calculator</a></li>
+                                <li>
+                                    <a href="/apradvancedCalculator.html">APR Advanced Calculator</a>
+                                </li>
+                         
+                              
+                            </ul>
+                        </li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Shortcuts</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main">
+                <div class="show">
+                    <div class="name">
+                        <h1>Retirement Income Analysis Calculator</h1>
+                    </div>
+                    <div class="left">
+                        <div class="inp"> <!--it is the input div,put all the input fields(inside form) here-->
+                            <form>
+                                <label for="Saved at Retirement">Saved at Retirement</label>
+                                <input id="Saved at Retirement" type="number" />
+                                <label for="Retirement Years">Retirement Years</label>
+                                <input id="Retirement Years" type="number" />
+                                <label for="Annual Return Rate">Annual Return Rate (%)</label>
+                                <input id="Annual Return Rate" type="number" />
+                                <button id="retirement-income-button" class="btn" type="button">Calculate</button>
+                                <button type="reset" class="btn">Reset</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="out"> <!--put all the result related(output) fields here in this div-->
+                            <p id="retirement-income-result">Result:</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $('.btnn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+            $('.main').toggleClass("collapsed");
+        });
+        $('.serv-btn').click(function () {
+         $('nav ul .serv-show').toggleClass("show1");
+         $('nav ul .second').toggleClass("rotate");
+      });
+        $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    </script>
     <script src="js/riAnalysis.js"></script>
 </body>
+
 </html>
