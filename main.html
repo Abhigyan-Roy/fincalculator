@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    
+
 </head>
 
 <body>
@@ -18,14 +18,14 @@
             <h1>NAV BAR</h1>
         </div>
         <div class="wrapper">
-            <div class="side"></div>                                     <!--this is the div where the sidebar is imported--->
+            <div class="side"></div> <!--this is the div where the sidebar is imported--->
             <div class="main">
                 <div class="show">
                     <div class="name">
                         <h1>Retirement Income Analysis Calculator</h1>
                     </div>
                     <div class="left">
-                        <div class="inp">                                 <!--it is the input div,put all the input fields(inside form) here-->
+                        <div class="inp"> <!--it is the input div,put all the input fields(inside form) here-->
                             <form>
                                 <label for="Saved at Retirement">Saved at Retirement</label>
                                 <input id="Saved at Retirement" type="number" />
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <div class="out">                                    <!--put all the result related(output) fields here in this div-->
+                        <div class="out"> <!--put all the result related(output) fields here in this div-->
                             <p id="retirement-income-result">Result:</p>
                         </div>
                     </div>
@@ -48,28 +48,23 @@
         </div>
     </div>
     <script>
-        fetch('sidebar.html')
-          .then(response => response.text())
-          .then(html => {
-            document.querySelector('.side').innerHTML = html;
-            // jQuery code here
-            $('.btnn').click(function () {
-              $(this).toggleClass("click");
-              $('.sidebar').toggleClass("show");
-              $('.main').toggleClass("collapsed");
-            });
-            $('.serv-btn').click(function () {
-              $(this).toggleClass("show1");
-              $(this).next().slideToggle();
-              $(this).find('.second').toggleClass("rotate");
-            });
-            $('nav ul li').click(function () {
-              $(this).addClass("active").siblings().removeClass("active");
-            });
-          })
-          .catch(error => console.error(error));
-        </script>
-        
+        $('.side').load('sidebar.html', function() {
+          // jQuery code here
+          $('.btnn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+            $('.main').toggleClass("collapsed");
+          });
+          $('.serv-btn').click(function () {
+            $(this).toggleClass("show1");
+            $(this).next().slideToggle();
+            $(this).find('.second').toggleClass("rotate");
+          });
+          $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+          });
+        });
+    </script>
     <script src="js/riAnalysis.js"></script>
 </body>
 
