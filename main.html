@@ -151,13 +151,11 @@
                                 <li><a href="/percenCalculator.html">Percentage Calculator</a></li>
                                 <li><a href="/dateCalculator.html">Date Calculator</a></li>
                                 <li><a href="/uintConversion.html">Unit Conversion</a></li>
-                                <!-- <li><a href="/usiCalculator.html">US Inflation Calculator</a></li> -->
                                 <li><a href="/mmCalculator.html">Margin and Markup Calculator</a></li>
                                 <li><a href="/bfCalculator.html">Business Forecast Calculator</a></li>
                                 <li><a href="/fuelCalculator.html">Fuel Calculator</a></li>
                                 <li><a href="/htsCalculator.html">Hourly to Salary Calculator</a></li>
                                 <li><a href="/siCalculator.html">Salary Increase Calculator</a></li>
-                                <!-- <li><a href="/usptCalculator.html">US Paycheck Tax Calculator</a></li> -->
                                 <li><a href="/ndCalculator.html">Net Distribution Calculator</a></li>
                                 <li><a href="/erateCalculator.html">Effective Rate Calculator</a></li>
                                 <li>
@@ -206,8 +204,7 @@
         $('.serv-btn').click(function () {
             $(this).toggleClass("show1");
             $(this).next().slideToggle();
-            $('nav ul .first').toggleClass("rotate");
-            $('nav ul .second').toggleClass("rotate");
+            $(this).find('.second').toggleClass("rotate");
         });
         $('nav ul li').click(function () {
             $(this).addClass("active").siblings().removeClass("active");
