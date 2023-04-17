@@ -158,10 +158,23 @@ h1{
   .sidebar{
     position: fixed;
     width: 300px;
+    overflow-y: auto;
     height: 100%;
     left: -350px;
     background: #1b1b1b;
     transition: all 0.4s ease;
+  }
+  .sidebar::-webkit-scrollbar {
+    width: 0.8px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: #1b1b1b;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background: #3c3434;
+    border-radius: 5px;
   }
   .sidebar.show{
     left: 0px;
@@ -197,6 +210,9 @@ h1{
   }
   nav ul li a:hover{
     background: #1e1e1e;
+  }
+  nav ul .serv-show{
+    display: none;
   }
   nav ul .serv-show.show1{
     display: block;
