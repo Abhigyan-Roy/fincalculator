@@ -9,6 +9,6 @@ function calculate() {
 
     // Display the result
     let result = document.getElementById("result");
-    result.innerHTML = "<h2>Result</h2>" +
+    result.innerHTML = 
                        "<p>Holding Period Return: " + (hpr * 100).toFixed(2) + "%</p>";
 }
