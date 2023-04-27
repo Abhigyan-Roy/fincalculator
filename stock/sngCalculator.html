@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-      $(function () {
-        $("#includeHtml").load("categories.html");
-      });
-    </script>
-    <title>Retirement Planner</title>
-  </head>
-  <body>
-    <div class="container">
-        <h2>Stock Non-Constant Growth Calculator using Dividend</h2>
-<label for="requiredReturn">Required Return (%): </label>
-<input type="number" id="requiredReturn" step="0.01" min="0"><br><br>
 
-<label for="dividend">Dividend: </label>
-<input type="number" id="dividend" step="0.01" min="0"><br><br>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#includeHtml").load("categories.html");
+    });
+  </script>
+  <title>Retirement Planner</title>
+</head>
 
-<label for="growthRate1">Growth Rate Year 1 (%): </label>
-<input type="number" id="growthRate1" step="0.01" min="0"><br><br>
+<body>
+  <div class="container">
+    <h2>Stock Non-Constant Growth Calculator using Dividend</h2>
+    <label for="requiredReturn">Required Return (%): </label>
+    <input type="number" id="requiredReturn" step="0.01" min="0"><br><br>
 
-<label for="growthRate2">Growth Rate Year 2 (%): </label>
-<input type="number" id="growthRate2" step="0.01" min="0"><br><br>
+    <label for="dividend">Dividend: </label>
+    <input type="number" id="dividend" step="0.01" min="0"><br><br>
 
-<label for="growthRate3">Growth Rate Year 3 (%): </label>
-<input type="number" id="growthRate3" step="0.01" min="0"><br><br>
+    <label for="growthRate1">Growth Rate Year 1 (%): </label>
+    <input type="number" id="growthRate1" step="0.01" min="0"><br><br>
 
-<label for="growthRate4">Growth Rate Year 4 (%): </label>
-<input type="number" id="growthRate4" step="0.01" min="0"><br><br>
+    <label for="growthRate2">Growth Rate Year 2 (%): </label>
+    <input type="number" id="growthRate2" step="0.01" min="0"><br><br>
 
-<label for="growthRate5">Growth Rate Year 5 (%): </label>
-<input type="number" id="growthRate5" step="0.01" min="0"><br><br>
+    <label for="growthRate3">Growth Rate Year 3 (%): </label>
+    <input type="number" id="growthRate3" step="0.01" min="0"><br><br>
 
-<label for="growthRate6">Growth Rate Year 6 (%): </label>
-<input type="number" id="growthRate6" step="0.01" min="0"><br><br>
+    <label for="growthRate4">Growth Rate Year 4 (%): </label>
+    <input type="number" id="growthRate4" step="0.01" min="0"><br><br>
 
-<label for="growthRate7">Growth Rate Year 7 (%): </label>
-<input type="number" id="growthRate7" step="0.01" min="0"><br><br>
+    <label for="growthRate5">Growth Rate Year 5 (%): </label>
+    <input type="number" id="growthRate5" step="0.01" min="0"><br><br>
 
-<label for="growthRate8">Growth Rate Year 8 (%): </label>
-<input type="number" id="growthRate8" step="0.01" min="0"><br><br>
+    <label for="growthRate6">Growth Rate Year 6 (%): </label>
+    <input type="number" id="growthRate6" step="0.01" min="0"><br><br>
 
-<label for="growthRate9">Growth Rate Year 9 (%): </label>
-<input type="number" id="growthRate9" step="0.01" min="0"><br><br>
+    <label for="growthRate7">Growth Rate Year 7 (%): </label>
+    <input type="number" id="growthRate7" step="0.01" min="0"><br><br>
 
-<label for="growthRate10">Growth Rate Year 10 (%): </label>
-<input type="number" id="growthRate10" step="0.01" min="0"><br><br>
+    <label for="growthRate8">Growth Rate Year 8 (%): </label>
+    <input type="number" id="growthRate8" step="0.01" min="0"><br><br>
 
-<button onclick="calculate()">Calculate</button>
-        <p id="result"></p>
-      <script src="js/sngCalculator.js"></script>
-  </body>
+    <label for="growthRate9">Growth Rate Year 9 (%): </label>
+    <input type="number" id="growthRate9" step="0.01" min="0"><br><br>
+
+    <label for="growthRate10">Growth Rate Year 10 (%): </label>
+    <input type="number" id="growthRate10" step="0.01" min="0"><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+    <script src="../js/sngCalculator.js"></script>
+</body>
+
 </html>

@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-      $(function () {
-        $("#includeHtml").load("categories.html");
-      });
-    </script>
-    <title>Retirement Income Analysis Calculator</title>
-  </head>
-  <body>
-    <div class="fncalc">
-      <form>
-      <label for="Saved at Retirement">Saved at Retirement</label>
-      <input id="Saved at Retirement" type="number" />
 
-      <label for="Retirement Years">Retirement Years</label>
-      <input id="Retirement Years" type="number" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Calculator</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 
-      <label for="Annual Return Rate">Annual Return Rate (%)</label>
-      <input id="Annual Return Rate" type="number" />
-
-      <button id="retirement-income-button" type="button">Calculate</button>
-
-      <p id="retirement-income-result"></p>
-      <button type="reset">Reset</button>
-    </form>
+<body>
+  <div class="container">
+    <div class="navigation">
+      <h1>NAV BAR</h1>
     </div>
+    <div class="wrapper">
+      <div class="side"></div> <!--this is the div where the sidebar is imported--->
+      <div class="main">
+        <div class="show">
+          <div class="name">
+            <h1>Retirement Income Analysis Calculator</h1>
+          </div>
+          <div class="left">
+            <div class="inp"> <!--it is the input div,put all the input fields(inside form) here-->
+              <form>
+                <label for="Saved at Retirement">Saved at Retirement</label>
+                <input id="Saved at Retirement" type="number" />
+          
+                <label for="Retirement Years">Retirement Years</label>
+                <input id="Retirement Years" type="number" />
+          
+                <label for="Annual Return Rate">Annual Return Rate (%)</label>
+                <input id="Annual Return Rate" type="number" />
+          
+                <button id="retirement-income-button" class="btn" type="button">Calculate</button>
+                <button id="resetButton" class="btn" type="button">Reset</button>
+              </form>
+            </div>
+          </div>
+          <div class="right">
+            <div class="out"> <!--put all the result related(output) fields here in this div-->
+              <p id="retirement-income-result"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('.side').load('../sidebar.html', function () {
+      // jQuery code here
+      $('.btnn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+        $('.main').toggleClass("collapsed");
+      });
+      $('.serv-btn').click(function () {
+        $(this).toggleClass("show1");
+        $(this).next().slideToggle();
+        $(this).find('.second').toggleClass("rotate");
+      });
+      $('nav ul li').click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    });
+  </script>
+  <script src="../js/riAnalysis.js"></script>
+</body>
 
-    <script src="js/riAnalysis.js"></script>
-  </body>
 </html>

@@ -1,35 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-      $(function () {
-        $("#includeHtml").load("categories.html");
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Calculator</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navigation">
+      <h1>NAV BAR</h1>
+    </div>
+    <div class="wrapper">
+      <div class="side"></div> <!--this is the div where the sidebar is imported--->
+      <div class="main">
+        <div class="show">
+          <div class="name">
+            <h1>Retirement Savings Analysis Calculator</h1>
+          </div>
+          <div class="left">
+            <div class="inp"> <!--it is the input div,put all the input fields(inside form) here-->
+              <form>
+                <label for="savings-goal">Savings Goal:</label>
+                <input type="number" id="savings-goal">
+                <br>
+                <label for="years-until-retirement">Years Until Retirement:</label>
+                <input type="number" id="years-until-retirement">
+                <br>
+                <label for="annual-return-rate">Annual Return Rate (%):</label>
+                <input type="number" id="annual-return-rate">
+                <br>
+                <label for="current-savings">Current Savings:</label>
+                <input type="number" id="current-savings">
+                <br>
+                
+                <br>
+                <button type="button" class="btn" onclick="calculate()">Calculate</button>
+                <button type="button" class="btn" onclick="resetForm()">Reset</button>
+              </form>
+            </div>
+          </div>
+          <div class="right">
+            <div class="out"> <!--put all the result related(output) fields here in this div-->
+              <label for="monthly-savings">Monthly Savings:</label>
+                <span id="monthly-savings"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('.side').load('../sidebar.html', function () {
+      // jQuery code here
+      $('.btnn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+        $('.main').toggleClass("collapsed");
       });
-    </script>
-    <title>Retirement Planner</title>
-  </head>
-  <body>
-    <label for="savings-goal">Savings Goal:</label>
-    <input type="number" id="savings-goal">
-    <br>
-    <label for="years-until-retirement">Years Until Retirement:</label>
-    <input type="number" id="years-until-retirement">
-    <br>
-    <label for="annual-return-rate">Annual Return Rate (%):</label>
-    <input type="number" id="annual-return-rate">
-    <br>
-    <label for="current-savings">Current Savings:</label>
-    <input type="number" id="current-savings">
-    <br>
-    <label for="monthly-savings">Monthly Savings:</label>
-    <span id="monthly-savings"></span>
-    <br>
-    <button type="button" onclick="calculate()">Calculate</button>
-    <button type="button" onclick="resetForm()">Reset</button>
-    <script src="js/rsAnalysis.js"></script>
-  </body>
+      $('.serv-btn').click(function () {
+        $(this).toggleClass("show1");
+        $(this).next().slideToggle();
+        $(this).find('.second').toggleClass("rotate");
+      });
+      $('nav ul li').click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    });
+  </script>
+  <script src="../js/rsAnalysis.js"></script>
+</body>
+
 </html>

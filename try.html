@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>401k Save the Max Calculator</title>
+	<script src="script.js"></script>
+	<style>
+		input[type="text"] {
+			width: 100px;
+			padding: 5px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		input[type="submit"] {
+			padding: 5px 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: #4CAF50;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		#result {
+			display: none;
+			margin-top: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		h2 {
+			margin-top: 0;
+		}
+		table {
+			width: 100%;
+			margin-bottom: 20px;
+			border-collapse: collapse;
+		}
+		table th, table td {
+			padding: 10px;
+			border: 1px solid #ccc;
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+	<h2>401k Save the Max Calculator</h2>
+	<form name="myForm">
+		<table>
+			<tr>
+				<th>Max Contribution Limit:</th>
+				<td><input type="text" name="maxContributionLimit" placeholder="Enter amount"></td>
+			</tr>
+			<tr>
+				<th>Catch-up Contribution (Age 50 and Older):</th>
+				<td><input type="text" name="catchUp" placeholder="Enter amount"></td>
+			</tr>
+			<tr>
+				<th>Contribution to Date:</th>
+				<td><input type="text" name="contributionToDate" placeholder="Enter amount"></td>
+			</tr>
+			<tr>
+				<th>Remaining Pay Periods:</th>
+				<td><input type="text" name="remainingPayPeriods" placeholder="Enter number"></td>
+			</tr>
+		</table>
+		<input type="button" value="Calculate" onclick="calc()">
+	</form>
+	<div id="result">
+		<h3>Result:</h3>
+		<table>
+			<tr>
+				<th>Maximum Contribution per Remaining Pay Period:</th>
+				<td id="maxContributionPerRemainingPayPeriod"></td>
+			</tr>
+			<tr>
+				<th>Amount Remaining to Max Contribution:</th>
+				<td id="amountRemainingToMaxContribution"></td>
+			</tr>
+		</table>
+	</div>
+    <script>
+        function calc() {
+    var ele = document.getElementById("result");
+    ele.style.display = "block";
+
+    var maxContributionLimit = evalValue(document.myForm.maxContributionLimit.value);
+    var catchUp = evalValue(document.myForm.catchUp.value);
+    var contributionToDate = evalValue(document.myForm.contributionToDate.value);
+    var remainingPayPeriods = evalValue(document.myForm.remainingPayPeriods.value);
+
+    if(maxContributionLimit == 0 ) {
+        alert("Enter a valid number!");
+        return;
+    }
+
+    var amountRemainingToMaxContribution = document.getElementById("amountRemainingToMaxContribution");
+    var maxContributionPerRemainingPayPeriod = document.getElementById("maxContributionPerRemainingPayPeriod");
+
+    var totalContribution = contributionToDate + (remainingPayPeriods * maxContributionPerRemainingPayPeriod);
+
+    if(totalContribution > maxContributionLimit + catchUp) {
+        maxContributionPerRemainingPayPeriod.innerHTML = formatDollar(0);
+        amountRemainingToMaxContribution.innerHTML = formatDollar(0);
+        return;
+    }
+
+    var remainingAmount = maxContributionLimit + catchUp - contributionToDate;
+    var remainingPayPeriodsWithCatchUp = remainingPayPeriods + 6;
+
+    var maxContribution = remainingAmount / remainingPayPeriodsWithCatchUp;
+
+    maxContributionPerRemainingPayPeriod.innerHTML = formatDollar(maxContribution);
+    amountRemainingToMaxContribution.innerHTML = formatDollar(remainingAmount);
+}
+
+function formatDollar(num) {
+    var p = num.toFixed(2).split(".");
+    return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+        return  num + (i && !(i % 3) ? "," : "") + acc;
+    }, "") + "." + p[1];
+}
+
+function evalValue(value) {
+    return parseFloat(value.replace(/[^\d\.]/g, ''));
+}
+
+    </script>
+</body>
+</html>
