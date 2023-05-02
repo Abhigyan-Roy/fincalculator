@@ -411,22 +411,79 @@ nav ul li a span.rotate {
   html {
     font-size: 48%;
   }
-  .show {
-    width: 90vw;
-  }
+  
   .inp form input[type="number"] {
     width: 25rem;
     height: 3rem;
   }  
+  .out label,
+  .out span,
+  .out div {
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+  
+  }
+  #main-screen {
+    width: 80vw;
+  }
+  
+}
+@media (max-width: 727px) {
+  html {
+    font-size: 46%;
+  }
+  
+  .inp form input[type="number"] {
+    width: 23rem;
+    height: 3rem;
+  }  
+  .out label,
+  .out span,
+  .out div {
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+  
+  }
+  #main-screen {
+    width: 80vw;
+  }
+  
+}
+@media (max-width: 651px) {
+  html {
+    font-size: 44%;
+  }
+  
+  .inp form input[type="number"] {
+    width: 23rem;
+    height: 3rem;
+  }  
+  .out label,
+  .out span,
+  .out div {
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+  
+  }
+  #main-screen {
+    width: 80vw;
+  }
+  
 }
 @media (max-width: 500px) {
   .sidebar {
     width: 100%;
     left: -100%;
   }
-
+  .inp form input[type="number"] {
+    width: 35rem;
+    height: 3rem;
+  }
+  .show {
+    width: 100vw;
+  }
   #main-screen {
-    width: 75vw;
+    width: 85vw;
     height: 80vh;
     display: grid;
     gap: 20px;
